@@ -60,6 +60,8 @@ class PPHomeController : UIViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PaperCell", for: indexPath)
         let paperImage = UIImageView()
         paperImage.tag = 1000 + indexPath.item
+        paperImage.contentMode = .scaleAspectFit
+//        paperImage.clipsToBounds = true
         paperImage.kf.indicatorType = .activity
         paperImage.kf.setImage(with: URL(string: showArray![indexPath.item]), options: [.transition(.fade(0.5))])
         cell.addSubview(paperImage)
@@ -94,7 +96,7 @@ class PPHomeController : UIViewController {
     }
     
     func waterFall(_ collectionView: UICollectionView, layout waterFallLayout: PPCollectionViewFlowLayout, heightForItemAt indexPath: IndexPath) -> CGFloat {
-        return (kScreenWith - 32) / 3 * (1280.0 / 720.0)
+        return (kScreenWith - 32) / 3 * (kScreenSize!.height / kScreenSize!.width)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -166,7 +168,8 @@ extension PPHomeController {
             let resultDic = (result as! [String : Any])["vertical"] as! [Any]
             let tempArray = PPGetLatestPaperResponse.decode(resultDic) as? [PPGetLatestPaperResponse]
             for data in tempArray ?? [] {
-                self.showArray?.append(data.img!)
+                data.wp?.append("?imageMogr2/thumbnail/!\(kScreenSize!.width)x\(kScreenSize!.height)r/gravity/Center/crop/\(kScreenSize!.width)x\(kScreenSize!.height)")
+                self.showArray?.append(data.wp!)
             }
             self.paperCollectionView.reloadData()
         }) { (error) in
@@ -179,7 +182,8 @@ extension PPHomeController {
             let resultDic = (result as! [String : Any])["vertical"] as! [Any]
             let tempArray = PPGetLatestPaperResponse.decode(resultDic) as? [PPGetLatestPaperResponse]
             for data in tempArray ?? [] {
-                self.showArray?.append(data.img!)
+                data.wp?.append("?imageMogr2/thumbnail/!\(kScreenSize!.width)x\(kScreenSize!.height)r/gravity/Center/crop/\(kScreenSize!.width)x\(kScreenSize!.height)")
+                self.showArray?.append(data.wp!)
             }
             self.paperCollectionView.reloadData()
         }) { (error) in
@@ -213,6 +217,7 @@ extension PPHomeController: JunBrowsePresentDelefate {
         
         //2.从缓存中取出image
         let image = KingfisherManager.shared.cache.retrieveImageInDiskCache(forKey: imageUrl!.absoluteString)
+        
         // 3.根据image计算位置
         let imageH = kScreenWith / image!.size.width * image!.size.height
         let y: CGFloat = imageH < kScreenHeigt ? (kScreenHeigt - imageH) / 2 : 0

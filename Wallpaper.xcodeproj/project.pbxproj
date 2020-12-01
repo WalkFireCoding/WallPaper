@@ -60,7 +60,7 @@
 		3422643825417216006060DE /* Wallpaper-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Wallpaper-Bridging-Header.h"; sourceTree = "<group>"; };
 		3422643925417217006060DE /* PPWallPaperSetTool.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PPWallPaperSetTool.h; sourceTree = "<group>"; };
 		3422643A25417217006060DE /* PPWallPaperSetTool.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PPWallPaperSetTool.m; sourceTree = "<group>"; };
-		345D8350253698FD00C54982 /* 壁壁壁壁纸.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "壁壁壁壁纸.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		345D8350253698FD00C54982 /* 亮瞎眼.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "亮瞎眼.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		345D8353253698FD00C54982 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		345D835C253698FF00C54982 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		345D835F253698FF00C54982 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -132,7 +132,7 @@
 		345D8351253698FD00C54982 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				345D8350253698FD00C54982 /* 壁壁壁壁纸.app */,
+				345D8350253698FD00C54982 /* 亮瞎眼.app */,
 				345D8366253698FF00C54982 /* WallpaperTests.xctest */,
 				345D8371253698FF00C54982 /* WallpaperUITests.xctest */,
 			);
@@ -267,7 +267,7 @@
 			);
 			name = Wallpaper;
 			productName = Wallpaper;
-			productReference = 345D8350253698FD00C54982 /* 壁壁壁壁纸.app */;
+			productReference = 345D8350253698FD00C54982 /* 亮瞎眼.app */;
 			productType = "com.apple.product-type.application";
 		};
 		345D8365253698FF00C54982 /* WallpaperTests */ = {
@@ -647,12 +647,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XYH75272LX;
 				INFOPLIST_FILE = Wallpaper/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.na517.businesstravel.donghangeqy;
-				PRODUCT_NAME = "壁壁壁壁纸";
+				PRODUCT_NAME = "亮瞎眼";
 				SWIFT_OBJC_BRIDGING_HEADER = "Wallpaper/Paper/Wallpaper-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -669,12 +670,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = XYH75272LX;
 				INFOPLIST_FILE = Wallpaper/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.na517.businesstravel.donghangeqy;
-				PRODUCT_NAME = "壁壁壁壁纸";
+				PRODUCT_NAME = "亮瞎眼";
 				SWIFT_OBJC_BRIDGING_HEADER = "Wallpaper/Paper/Wallpaper-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

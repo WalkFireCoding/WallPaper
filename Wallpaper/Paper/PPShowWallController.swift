@@ -35,6 +35,7 @@ extension PPShowWallController {
         self.view.backgroundColor = .clear
         wallImageView = UIImageView.init()
         wallImageView.isUserInteractionEnabled = true
+        wallImageView.contentMode = .scaleAspectFit
         wallImageView.kf.setImage(with: URL.init(string: imageDataArray[currentIndex]))
         let leftRecognize = UISwipeGestureRecognizer(target: self, action: #selector(handleWallImageWith(recongnize:)))
         leftRecognize.direction = .left

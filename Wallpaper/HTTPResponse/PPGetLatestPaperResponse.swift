@@ -12,4 +12,5 @@ class PPGetLatestPaperResponse: PPBaseResponse {
     var cid : [String]? = [""]
     var preview : String? = ""
     var img : String? = ""
+    var wp : String? = ""
 }
